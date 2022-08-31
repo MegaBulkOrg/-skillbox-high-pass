@@ -1,0 +1,25 @@
+section.works
+  .container-fluid.works__container
+    .works__big-item
+      picture
+        source(srcset="img/320/first-block-1.webp" media=`(max-width:${mobile})`)
+        source(srcset="img/768/first-block-1.webp" media=`(max-width:${smallTab})`)
+        source(srcset="img/tablet_1024/first-block-1.webp" media=`(max-width:${tablet})`)
+        img.works__big-item-img.lazyload(data-src="img/desktop/first-block-1.webp" alt="Неоновый фотосет")
+      .works__big-item-info
+        a.works__big-item-info-label(href="#") #мастеркласс
+        .works__big-item-info-down
+          p.works__big-item-info-down-author Мастер-класс от Игоря Робова
+          p.works__big-item-info-down-title Неоновый фотосет 2.0 7 июля 20:00
+          a.works__big-item-info-down-btn Узнать больше
+    .works__other
+      h2.works__title Работы участников предыдущего мастер-класса
+      .works__other-container
+        - var works = [{desktopPic: 'img/desktop/first-block-2.webp',tabletPic: 'img/tablet_1024/first-block-2.webp',smallTabPic: 'img/768/first-block-2.webp',mobilePic: 'img/320/first-block-2.webp'},{desktopPic: 'img/desktop/first-block-3.webp',tabletPic: 'img/tablet_1024/first-block-3.webp',smallTabPic: 'img/768/first-block-3.webp',mobilePic: 'img/320/first-block-3.webp'},{desktopPic: 'img/desktop/first-block-4.webp',tabletPic: 'img/tablet_1024/first-block-4.webp',smallTabPic: 'img/768/first-block-4.webp',mobilePic: 'img/320/first-block-4.webp'}]
+        each work, i in works
+          .works__other-item(class=(i==0) ? 'works__other-item_first' : '')
+            picture
+              source(srcset=`${work.mobilePic}` media=`(max-width:${mobile})`)
+              source(srcset=`${work.smallTabPic}` media=`(max-width:${smallTab})`)
+              source(srcset=`${work.tabletPic}` media=`(max-width:${tablet})`)
+              img.works__other-item-img.lazyload(data-src=`${work.desktopPic}` alt="")

@@ -1,0 +1,111 @@
+.about
+  background-color: $color13
+  &__container
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 30px
+    padding-top: 30px
+    padding-bottom: 68px
+    @media (max-width:$tablet)
+      gap: 31px
+      padding-bottom: 81px
+    @media (max-width:$smallTab)
+      padding-top: 31px
+      padding-bottom: 63px
+    @media (max-width:$mobile)
+      padding-bottom: 60px
+      grid-template-columns: repeat(1, 1fr)
+      gap: 23px
+  &__title
+    color: $color7
+    font-family: TT Firs Neue
+    font-size: 24px
+    font-weight: 700
+    line-height: 31px
+    letter-spacing: 0
+    @media (max-width:$mobile)
+      font-size: 18px
+      line-height: 23px
+  &__text
+    margin-top: 5px
+    color: $color9
+    font-family: Roboto
+    font-size: 16px
+    font-weight: 400
+    line-height: 28px
+    letter-spacing: 0
+    @media (max-width:$smallTab)
+      margin-top: 3px
+    @media (max-width:$mobile)
+      margin-top: 5px
+      font-size: 14px
+      line-height: 25px
+  &__container-right
+    margin-top: 33px
+    @media (max-width:$mobile)
+      margin-top: 0
+  &__form-title
+    margin-top: 20px
+    color: $color7
+    font-family: TT Firs Neue
+    font-size: 24px
+    font-weight: 400
+    line-height: 22px
+    letter-spacing: 0
+    @media (max-width:$tablet)
+      margin-top: 19px
+    @media (max-width:$smallTab)
+      margin-top: 20px
+    @media (max-width:$mobile)
+      margin-top: 22px
+      font-size: 18px
+  &__newsletter-form
+    position: relative
+    display: grid
+    grid-template-columns: 474px 126px
+    gap: 30px
+    margin-top: 15px
+    @media (max-width:$tablet)
+      grid-template-columns: repeat(1, 1fr)
+      gap: 19px
+    @media (max-width:$smallTab)
+      margin-top: 16px
+      gap: 19px
+    @media (max-width:$mobile)
+      margin-top: 14px
+      gap: 20px
+    &-field
+      padding: 17px 23px 15px 23px
+      border: 1px solid $color11
+      background-color: $color11
+      transition: border-color .3s ease
+      @media (max-width:$tablet)
+        padding: 16px 23px 15px 23px
+        max-width: 340px
+      @media (max-width:$smallTab)
+        padding: 16px 23px 15px 23px
+      @media (max-width:$mobile)
+        padding: 10px 23px 9px 23px
+      &::placeholder
+        color: $color9
+        font-family: Roboto
+        font-size: 16px
+        font-weight: 400
+        line-height: 19px
+        letter-spacing: 0
+        transition: color .3s ease
+        @media (max-width:$mobile)
+          font-size: 14px
+          line-height: 16px
+      &:hover:not(:focus-visible)::placeholder
+        color: $color1
+      &:focus-visible
+        border-color: $color1
+      &:active:not(:focus-visible)::placeholder
+        color: $color7
+      &.error
+        border-color: $color4
+      &-error-msg
+        @include errorFormMsg
+    &-submit-btn
+      @include submitButton

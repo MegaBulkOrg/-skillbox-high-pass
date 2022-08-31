@@ -1,0 +1,13 @@
+.projects__item.projects__item_standart
+  picture
+    source(srcset=`${project.mobilePic}` media=`(max-width:${mobile})`)
+    source(srcset=`${project.smallTabPic}` media=`(max-width:${smallTab})`)
+    source(srcset=`${project.tabletPic}` media=`(max-width:${tablet})`)
+    img.projects__item-img.lazyload(data-src=`${project.desktopPic}` alt="")
+  .projects__item-info
+    a.projects__item-label(href="#")= project.hashtag
+    a.projects__item-introtext(href="#" target="_blank" aria-label="")= project.introtext
+    .projects__item-date
+      svg(width="12" height="14" viewBox="0 0 12 14" fill="none")
+        use(xlink:href="img/sprite.svg#projects-date-icon-grey")
+      p= project.date

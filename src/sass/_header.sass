@@ -1,0 +1,178 @@
+.header
+  background-color: $color13
+  &__container
+    position: relative
+    display: flex
+    padding-top: 24px
+    padding-bottom: 21px
+    @media (max-width:$tablet)
+      padding-top: 27px
+      padding-bottom: 22px
+    @media (max-width:$smallTab)
+      justify-content: space-between
+      padding-bottom: 21px
+    @media (max-width:$mobile)
+      padding-top: 26px
+      padding-bottom: 18px
+  &__nav
+    flex-grow: 1
+    margin-top: 6px
+    margin-left: 140px
+    @media (max-width:$tablet)
+      margin-top: 2px
+      margin-left: 84px
+    @media (max-width:$smallTab)
+      position: absolute
+      top: 77px
+      right: 0
+      left: 0
+      margin-left: 0
+      background-color: $color11
+      padding: 13px 27px 12px 27px
+    @media (max-width:$mobile)
+      top: 67px
+      padding: 15px 21px 9px 21px
+    &-list
+      justify-content: start
+      @media (max-width:$mobile)
+        position: absolute
+        z-index: 3
+        right: 100%
+        top: 0
+        margin: 0
+        padding: 48px 0 36px 21px
+        width: 100%
+        min-height: 540px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        background-color: $color13
+        transform-origin: 0% 0%
+        transform: translateX(0)
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)
+      &-up
+        display: flex
+        @media (max-width:$smallTab)
+          justify-content: space-between
+        @media (max-width:$mobile)
+          flex-direction: column
+      &-down
+        display: none
+        color: $color1
+        @media (max-width:$mobile)
+          display: flex
+        & p
+          font-family: TT Firs Neue
+          font-size: 14px
+          font-weight: 500
+          line-height: 18px
+          letter-spacing: 0em
+      &.header__mobile-menu-open
+        @media (max-width:$mobile)
+          transform: translateX(100%)
+    &-item:not(:last-child)
+      margin-right: 79px
+      @media (max-width:$tablet)
+        margin-right: 33px
+      @media (max-width:$smallTab)
+        margin-right: 0
+      @media (max-width:$mobile)
+        margin-bottom: 30px
+    &-link
+      position: relative
+      z-index: 1
+      color: $color7
+      font-family: TT Firs Neue
+      font-size: 16px
+      font-weight: 400
+      line-height: 21px
+      letter-spacing: 0
+      transition: color .3s ease
+      &::after
+        @include pseudo
+        color: $color7
+        z-index: -1
+        top: -5px
+        right: -5px
+        bottom: -5px
+        left: -5px
+        background-color: $color2
+        opacity: 0
+        transition: opacity .3s ease
+      &:hover:not(:focus-visible)
+        color: $color1
+      &:focus-visible
+        color: $color7
+        &::after
+          opacity: 1
+      &:active:not(:focus-visible)
+        color: $color3
+      &.header__nav-link-active
+        color: $color3
+  &__mobile-menu-open-btn
+    display: none
+    @include forForms
+    @media (max-width:$mobile)
+      display: block
+  &__mobile-menu-close-btn
+    display: none
+    position: absolute
+    top: 14px
+    @include forForms
+    @media (max-width:$mobile)
+      display: block
+  &__search
+    position: absolute
+    right: 10px
+    padding: 5px
+    background-color: $color13
+    transform: translateY(-70px)
+    transition: transform .3s ease
+    @media (max-width:$smallTab)
+      @include zeroAbs
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 25px
+    &-open-btn
+      width: 25px
+      height: 25px
+      margin-top: 4px
+      @include forForms
+      @media (max-width:$tablet)
+        margin-top: 1px
+      @media (max-width:$smallTab)
+         margin-top: 0
+      & svg
+        @media (max-width:$mobile)
+          width: 20px
+          height: 20px
+    &.search__form-open
+      transform: none
+      z-index: 1
+    &-form
+      display: flex
+      width: 310px
+      @media (max-width:$smallTab)
+        width: 100%
+        justify-content: center
+    &-form-field
+      width: 100%
+      @include forForms
+      border-bottom: 1px $color8 solid
+      &::placeholder
+        color: $color8
+        font-family: TT Firs Neue
+        font-size: 16px
+        font-weight: 400
+        line-height: 21px
+        letter-spacing: 0em
+        transition: border-color .3s ease
+      &:hover:not(:focus-visible)
+        border-color: $color1
+      &:focus-visible
+        border-color: $color1
+      &:active:not(:focus-visible)
+        border-color: $color3
+    &-close-btn
+      @include forForms

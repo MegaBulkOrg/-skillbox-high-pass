@@ -1,0 +1,16 @@
+.projects__item.projects__item_big
+  picture
+    source(srcset=`${project.mobilePic}` media=`(max-width:${mobile})`)
+    source(srcset=`${project.smallTabPic}` media=`(max-width:${smallTab})`)
+    source(srcset=`${project.tabletPic}` media=`(max-width:${tablet})`)
+    img.projects__big-item-img.lazyload(data-src=`${project.desktopPic}` alt="")
+  .projects__big-item-info
+    a.projects__item-label(href="#")= project.hashtag
+    .projects__item-info-up
+      .projects__item-date
+        svg(width="12" height="14" viewBox="0 0 12 14" fill="none")
+          use(xlink:href="img/sprite.svg#projects-date-icon-white")
+        p= project.date
+      .projects__item-title= project.title
+      .projects__item-introtext= project.introtext
+    a.projects__item-btn О проекте

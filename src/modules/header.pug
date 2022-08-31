@@ -1,0 +1,37 @@
+header.header
+  .container-fluid.header__container
+    a.header__logo(href="/")
+      picture
+        source(srcset="img/320/up-logo.webp" media=`(max-width:${mobile})`)
+        source(srcset="img/768/up-logo.webp" media=`(max-width:${smallTab})`)
+        source(srcset="img/tablet_1024/up-logo.webp" media=`(max-width:${tablet})`)
+        img.header__logo-img.lazyload(data-src="img/desktop/up-logo.webp" alt="Логотип Фотостудии High Pass")
+    nav.header__nav
+      ul.header__nav-list
+        button.header__mobile-menu-close-btn
+          svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
+            use(xlink:href="img/sprite.svg#mobile-close-btn")
+        .header__nav-list-up
+          - var menu = ['О студии','Наши проекты','Услуги','Мастер-классы','Контакты']
+          each title, i in menu
+            li.header__nav-item
+              if i == 0
+                a.header__nav-link.header__nav-link-active(href="#")= title
+              else
+                a.header__nav-link(href="#")= title
+        .header__nav-list-down
+          svg(width="16" height="16" viewBox="0 0 16 16" fill="none")
+            use(xlink:href="img/sprite.svg#mobile-phone-icon")
+          p +7 495 424-23-532
+      button.header__mobile-menu-open-btn
+        svg(width="20" height="18" viewBox="0 0 20 18" fill="none")
+          use(xlink:href="img/sprite.svg#mobile-menu-btn")
+    button.header__search-open-btn(aria-label="Открыть форму поиска")
+      svg(width="25" height="25" viewBox="0 0 25 25" fill="none")
+        use(xlink:href="img/sprite.svg#search-icon")
+    .header__search
+      form.header__search-form(action="https://jsonplaceholder.typicode.com/posts" method="POST" autocomplete="on")
+        input.header__search-form-field(type="text" name="query" placeholder="Что будем искать?" tabindex="-1" required)
+        button.header__search-close-btn(type="button" aria-label="Закрыть форму поиска" tabindex="-1")
+          svg(width="18" height="18" viewBox="0 0 18 18" fill="none")
+            use(xlink:href="img/sprite.svg#mobile-close-btn")

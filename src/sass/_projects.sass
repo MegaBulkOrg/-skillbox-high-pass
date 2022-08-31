@@ -1,0 +1,221 @@
+.projects__container
+  padding-top: 68px
+  padding-bottom: 68px
+  @media (max-width:$mobile)
+    padding-top: 50px
+    padding-bottom: 50px
+.projects__title
+  color: $color13
+  font-family: TT Firs Neue
+  font-size: 24px
+  font-weight: 700
+  line-height: 31px
+  letter-spacing: 0
+  @media (max-width:$mobile)
+    font-size: 18px
+    line-height: 23px
+.projects__items-container
+  margin-top: 12px
+  display: grid
+  gap: 30px
+  grid-template-columns: repeat(12, 1fr)
+  grid-template-areas: "first first second second third third fourth fourth fourth fourth fourth fourth" "fifth fifth fifth fifth fifth fifth sixth sixth sixth seventh seventh seventh"
+  @media (max-width:$tablet)
+    gap: 24px 30px
+    grid-template-columns: repeat(8, 1fr)
+    grid-template-areas: "first first second second third third third third" "fourth fourth fourth fourth fourth  sixth sixth sixth" "seventh seventh seventh fifth fifth fifth fifth fifth"
+  @media (max-width:$smallTab)
+    gap: 26px 30px
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-areas: "first first second second third third" "fourth fourth fourth fourth fourth fourth" "sixth sixth sixth seventh seventh seventh" "fifth fifth fifth fifth fifth fifth"
+  @media (max-width:$mobile)
+    margin-top: 16px
+    gap: 21px
+    grid-template-columns: repeat(1, 1fr)
+    grid-template-areas: "first" "second" "third" "fourth" "sixth" "seventh" "fifth"
+.projects__item
+  position: relative
+  min-height: 300px
+  @media (max-width:$tablet)
+    min-height: 285px
+  @media (max-width:$smallTab)
+    min-height: 299px
+  @media (max-width:$mobile)
+    min-height: 278px
+  &:nth-child(1)
+    grid-area: first
+  &:nth-child(2)
+    grid-area: second
+  &:nth-child(3)
+    grid-area: third
+  &:nth-child(4)
+    grid-area: fourth
+    height: 100%
+    & .projects__big-item-info
+      @media (max-width:$tablet)
+        padding: 30px 30px 36px 30px
+      @media (max-width:$smallTab)
+        padding: 30px 30px 29px 30px
+      @media (max-width:$mobile)
+        padding: 30px 30px 29px 29px
+    @media (max-width:$tablet)
+      min-height: 307px
+    @media (max-width:$smallTab)
+      min-height: 300px
+    @media (max-width:$mobile)
+      min-height: 422px
+  &:nth-child(5)
+    grid-area: fifth
+    height: 100%
+    @media (max-width:$tablet)
+      min-height: 307px
+    @media (max-width:$smallTab)
+      min-height: 302px
+    @media (max-width:$mobile)
+      min-height: 422px
+    & .projects__big-item-info
+      @media (max-width:$tablet)
+        padding: 30px 30px 29px 30px
+    & .projects__item-btn
+      @media (max-width:$mobile)
+        margin-top: 23px
+    & .projects__item-introtext
+      @media (max-width:$mobile)
+        margin-top: 8px
+  &:nth-child(6)
+    grid-area: sixth
+    @media (max-width:$tablet)
+      min-height: 307px
+  &:nth-child(7)
+    grid-area: seventh
+    @media (max-width:$tablet)
+      min-height: 307px
+  &-label
+    position: absolute
+    top: 7px
+    right: 7px
+    display: block
+    background-color: $color13
+    padding: 6px 14px
+    color: $color7
+    font-family: Roboto
+    font-size: 14px
+    font-weight: 400
+    line-height: 16px
+    letter-spacing: 0
+    @media (max-width:$mobile)
+      top: 5px
+      right: 6px
+      padding: 4px 14px
+      font-size: 12px
+      line-height: 14px
+  &-date
+    display: flex
+    align-items: center
+    @media (max-width:$tablet)
+      margin-left: 2px
+    @media (max-width:$smallTab)
+      margin-left: 0
+    & p
+      margin-left: 5px
+      color: $color10
+      font-family: Roboto
+      font-size: 12px
+      font-weight: 400
+      line-height: 22px
+      letter-spacing: 0
+  &-title
+    max-width: 290px
+    margin-top: 2px
+    color: $color7
+    font-family: TT Firs Neue
+    font-size: 24px
+    font-weight: 700
+    line-height: 24px
+    letter-spacing: 0
+    @media (max-width:$mobile)
+      margin-top: 7px
+  &-btn
+    display: inline-block
+    color: $color7
+    padding: 12px 22px 13px 19px
+    border: 3px solid $color1
+    font-family: Roboto
+    font-size: 16px
+    font-weight: 700
+    line-height: 19px
+    letter-spacing: 0
+    transition-property: background-color, border-color
+    transition-duration: .3s
+    transition-timing-function: ease
+    &:hover:not(:focus-visible)
+      background-color: $color1
+    &:focus-visible
+      background-color: $color2
+    &:active:not(:focus-visible)
+      background-color: $color3
+      border-color: $color3
+    @media (max-width:$smallTab)
+      padding: 12px 19px 13px 19px
+    @media (max-width:$mobile)
+      margin-top: 15px
+      padding: 9px 18px 10px 17px
+      font-size: 14px
+      line-height: 16px
+.projects__item_standart
+  display: flex
+  flex-direction: column
+  & .projects__item-info
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    flex-grow: 1
+    padding-top: 18px
+  & .projects__item-introtext
+    color: $color13
+    font-family: Roboto
+    font-size: 16px
+    font-weight: 400
+    line-height: 22px
+    letter-spacing: 0
+    transition-property: color, background-color
+    transition-duration: .3s
+    transition-timing-function: ease
+    &:hover:not(:focus-visible)
+      color: $color1
+    &:focus-visible
+      background-color: $color6
+    &:active:not(:focus-visible)
+      color: $color3
+.projects__item-img
+  display: block
+  width: 100%
+  height: 184px
+.projects__big-item-info
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: flex-start
+  position: relative
+  min-height: 100%
+  padding: 22px 30px 30px 30px
+  z-index: 1
+  & .projects__item-date p
+    color: $color7
+  & .projects__item-introtext
+    max-width: 292px
+    margin-top: 5px
+    color: $color7
+    font-family: Roboto
+    font-size: 16px
+    font-weight: 400
+    line-height: 22px
+    letter-spacing: 0
+    @media (max-width:$mobile)
+      margin-top: 10px
+      font-size: 14px
+      line-height: 18px
+  @media (max-width:$mobile)
+    justify-content: end
+.projects__big-item-img
+    @include forBigItemImg

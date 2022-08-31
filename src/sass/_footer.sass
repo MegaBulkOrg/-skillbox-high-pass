@@ -1,0 +1,90 @@
+.footer
+  background-color: $color13
+  &__container
+    display: flex
+    @media (max-width:$smallTab)
+      justify-content: space-between
+    @media (max-width:$mobile)
+      flex-direction: column
+    @media (max-width:$mobile)
+      padding-left: 0
+      padding-right: 0
+  &__left
+    display: flex
+    flex-direction: column
+    width: calc(34% + 1px)
+    padding-top: 26px
+    padding-bottom: 16px
+    @media (max-width:$tablet)
+      padding-top: 30px
+      width: calc(38% + 7px)
+    @media (max-width:$mobile)
+      order: 2
+      align-items: center
+      width: 100%
+      padding-top: 14px
+      background-color: $color11
+  &__copyright
+    color: $color8
+    font-family: TT Firs Neue
+    font-size: 14px
+    font-weight: 400
+    line-height: 18px
+    letter-spacing: 0
+    @media (max-width:$smallTab)
+      margin-top: 2px
+    @media (max-width:$mobile)
+      margin-top: 0
+      font-size: 10px
+      line-height: 13px
+  &__text
+    width: calc(53% + 6px)
+    padding-top: 22px
+    padding-bottom: 16px
+    color: $color9
+    font-family: Roboto
+    font-size: 16px
+    font-weight: 400
+    line-height: 22px
+    letter-spacing: 0
+    @media (max-width:$tablet)
+      width: calc(44% + 5px)
+    @media (max-width:$smallTab)
+      display: none
+    & p
+      max-width: 361px
+  &__right
+    display: flex
+    flex-direction: column
+    padding-top: 22px
+    padding-bottom: 16px
+    @media (max-width:$smallTab)
+      padding-top: 23px
+      padding-bottom: 19px
+    @media (max-width:$mobile)
+      order: 1
+      width: 100%
+      padding-top: 30px
+      padding-bottom: 29px
+    & p
+      color: $color9
+      text-align: center
+      font-family: Roboto
+      font-size: 16px
+      font-weight: 400
+      line-height: 22px
+      letter-spacing: 0
+  &__socials
+    margin-top: 8px
+    display: flex
+    justify-content: center
+  &__social-item:nth-child(1)
+    margin-right: 20px
+  &__social-link path
+    transition: fill .3s ease
+  &__social-item:hover:not(:focus-visible) path
+    fill: $color1
+  &__social-item:focus-visible path
+    fill: $color2
+  &__social-item:active:not(:focus-visible) path
+    fill: $color3
